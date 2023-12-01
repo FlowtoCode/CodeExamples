@@ -1,0 +1,35 @@
+<div class="divTable">
+    <div class="divTableBody">
+        <div class="divTableRow">
+            <div class="divTableHead">&nbsp;Available Courses</div>
+            <div class="divTableHead">&nbsp;Location</div>
+            <div class="divTableHead">&nbsp;Duration</div>
+        </div>
+        <f:for each="{gym.courses}" as="item">
+            <div class="divTableRow" id="coursePicTest">
+                <div class="divTableCell"><f:link.action controller="Course" action="show" arguments="{course : item, gym : gym}">{item.name}</f:link.action></div>
+                <div class="divTableCell">&nbsp;{item.street}&nbsp;,&nbsp;{item.zipcode}&nbsp;{item.city}&nbsp;</div>
+
+                <div class="divTableCell">&nbsp;{item.duration}&nbsp;hours</div>
+                <f:if condition="{item.image}">
+                    <f:then><div class="divHide"><f:image height="200px" image="{item.image}"></f:image></div></f:then>
+                </f:if>
+            </div>
+        </f:for>
+        <div class="divTableRow">
+            <div class="divTableHead">&nbsp;Available Events</div>
+            <div class="divTableHead">&nbsp;Location</div>
+            <div class="divTableHead">&nbsp;Duration</div>
+        </div>
+        <f:for each="{gym.events}" as="item">
+            <div class="divTableRow" id="eventPicTest">
+                <div class="divTableCell"><f:link.action controller="Event" action="show" arguments="{event : item, gym : gym}">{item.name}</f:link.action></div>
+                <div class="divTableCell">&nbsp;{item.street}&nbsp;,&nbsp;{item.zipcode}&nbsp;{item.city}</div>
+                <div class="divTableCell">&nbsp;{item.duration}</div>
+                <f:if condition="{item.image}">
+                    <f:then><div class="divHide"><f:image height="200px" image="{item.image}"></f:image></div></f:then>
+                </f:if>
+            </div>
+        </f:for>
+    </div>
+</div>

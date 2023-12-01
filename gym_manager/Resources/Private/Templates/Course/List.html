@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+    <f:debug>{_all}</f:debug>
+    <h1>Listing for Course</h1>
+
+    <f:flashMessages />
+
+    <table class="tx_gymmanager">
+        <tr>
+            <th><f:translate key="tx_gymmanager_domain_model_course.name" /></th>
+            <th><f:translate key="tx_gymmanager_domain_model_course.street" /></th>
+            <th><f:translate key="tx_gymmanager_domain_model_course.city" /></th>
+            <th><f:translate key="tx_gymmanager_domain_model_course.zipcode" /></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <f:for each="{courses}" as="course">
+            <tr>
+                <td><f:link.action action="show" arguments="{course : course}">{course.name}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{course : course}">{course.street}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{course : course}">{course.city}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{course : course}">{course.zipcode}</f:link.action></td>
+                <td><f:link.action action="edit" arguments="{course : course}">Edit</f:link.action></td>
+                <td><f:link.action action="delete" arguments="{course : course}">Delete</f:link.action></td>
+            </tr>
+        </f:for>
+    </table>
+
+    <f:link.action action="new">New Course</f:link.action>
+</f:section>
+</html>

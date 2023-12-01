@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2022-04-05T00:50:32Z"
+		  product-name="gym_manager">
+		<header/>
+		<body>
+			<trans-unit id="course.location.0">
+				<source>Indoor</source>
+			</trans-unit>
+			<trans-unit id="course.location.1">
+				<source>Outdoor</source>
+			</trans-unit>
+			<trans-unit id="error.1656938360">
+				<source>This User has already been assigned to this course</source>
+			</trans-unit>
+			<trans-unit id="error.1656938361">
+				<source>Sign up 2 days prior to start time</source>
+			</trans-unit>
+			<trans-unit id="error.1656938362">
+				<source>Course has not enough Members yet to start as intended</source>
+			</trans-unit>
+			<trans-unit id="error.1656938363">
+				<source>This course is already full</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

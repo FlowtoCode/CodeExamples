@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2022-04-05T00:50:32Z"
+		  product-name="gym_manager">
+		<header/>
+		<body>
+			<trans-unit id="extension.title">
+				<source>Gym Manager Records</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_gym">
+				<source>Gyms</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_gym.gym_label">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_gym.gym_street">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_gym.gym_city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_gym.gym_zipcode">
+				<source>Zipcode</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_gym.gym_description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_gym.gym_email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_gym.gym_availableCategories">
+            	<source>Available Categories</source>
+            </trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_gym.course">
+				<source>Course</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_gym.trainers">
+				<source>Trainer</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course">
+				<source>Courses</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.course_label">
+				<source>Course_Label</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.street">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.zipcode">
+				<source>Zipcode</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.coursestart">
+				<source>Course Starttime</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.courseend">
+				<source>Course Endtime</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.duration">
+				<source>Duration</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.category">
+				<source>Course Category</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.trainers">
+				<source>Trainer</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.location">
+				<source>Indoor / Outdoor Activity</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.difficulty">
+				<source>Difficulty</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.price">
+				<source>Course Fee</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.min_group_size">
+				<source>Minimum Group Size</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_course.max_group_size">
+				<source>Maximum Group Size</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_gym.event">
+				<source>Event</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_event">
+				<source>Events</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_event.event_label">
+				<source>Event_Label</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_event.street">
+				<source>Event_Street</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_event.city">
+				<source>Event_City</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_event.zipcode">
+				<source>Event_Zipcode</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_trainer">
+				<source>Trainers</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_trainer.firstname">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_trainer.lastname">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="tx_gymmanager_domain_model_trainer.age">
+				<source>Age</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

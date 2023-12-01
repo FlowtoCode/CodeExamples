@@ -1,0 +1,15 @@
+<div id="contactCard">
+    <f:if condition="{gym}">
+        <div class="TrainerCard">
+            <f:for as="trainer" each="{gym.trainers}">
+                <div class="SingleTrainerCard">
+                    <f:if condition="{trainer.image}">
+                        <br><f:image height="200px" image="{trainer.image}"></f:image><br>
+                    </f:if>
+                    Name: {trainer.firstname}&nbsp{trainer.lastname}<br>
+                    Age: {trainer.age}
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+</div>

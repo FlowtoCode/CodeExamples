@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="default" />
+
+<f:section name="content" >
+    <f:form.validationResults>
+        <f:if condition="{validationResults.flattenedErrors}">
+            <ul class="errors">
+                <f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
+                    <li>{propertyPath}
+                        <ul>
+                            <f:for each="{errors}" as="error">
+                                <li>{error.code}: {error}</li>
+                            </f:for>
+                        </ul>
+                    </li>
+                </f:for>
+            </ul>
+        </f:if>
+    </f:form.validationResults>
+    <f:flashMessages/>
+    <h1>Add a new Gym-Location</h1>
+    <br>
+    <f:form action="create" controller="GymManager" method="post" objectName="newGym" object="{newGym}">
+    <table>
+        <tr><th>Label&nbsp;</th></tr>
+            <td><f:form.textfield placeholder="Organisation Name" type="text" property="name"/></td>
+        <tr><th>&nbsp;Street&nbsp;</th></tr>
+            <td><f:form.textfield placeholder="Enter your Street" type="text" property="street"/></td>
+        <tr><th>&nbsp;City&nbsp;</th></tr>
+            <td><f:form.textfield placeholder="Enter Your City" type="text" property="city"/></td>
+        <tr><th>&nbsp;Zipcode&nbsp;</th></tr>
+            <td><f:form.textfield placeholder="max. 5 Characters" type="text" property="zipcode"/></td>
+        <tr><th>&nbsp;Description&nbsp;</th></tr>
+            <td><f:form.textfield placeholder="Describe Your Business-Model" type="text" property="description"/></td>
+        <tr><th>&nbsp;Email&nbsp;</th></tr>
+            <td><f:form.textfield placeholder="example@email.com" type="text" property="email"/></td>
+    </table>
+    <br>
+    <input type="submit" value="submit"></f:form>
+</f:section>
+
+
+</html>

@@ -1,0 +1,36 @@
+{
+    "name": "florian/gym-manager",
+    "type": "typo3-cms-extension",
+    "description": "This TYPO3 extension is an example in the Extbase Fluid Book. See external documentation",
+    "license": [
+        "GPL-2.0+"
+    ],
+
+    "authors": [
+        {
+            "name": "Florian Herrmann",
+            "role": "Developer"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Florian\\GymManager\\": "Classes/"
+        }
+    },
+
+    "version": "1.0.0",
+    "require": {
+        "typo3/cms-core": "^11.0.0"
+    },
+
+    "replace": {
+        "typo3-ter/gym_manager": "self.version"
+    },
+
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "gym_manager"
+        }
+    }
+}

@@ -1,0 +1,78 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+<f:section name="content">
+    <h1>Course Details</h1>
+    <f:flashMessages/>
+    <h2 style="color: darkblue">{gym.name} >>> {course.name}</h2>
+    <f:if condition="{course.minGroupSize} !== 0">
+        <f:then>
+            <div>Minimal Group Size is: {course.minGroupSize}</div>
+        </f:then>
+    </f:if>
+    <f:if condition="{course.maxGroupSize} !== 0">
+        <f:then>
+            <div>Maximal Group Size is: {course.maxGroupSize}</div>
+        </f:then>
+    </f:if>
+    <div><br>
+        <f:if condition="{course.image}">
+            <f:then>
+                <div>
+                    <f:image height="200px" image="{course.image}"></f:image>
+                </div>
+            </f:then>
+        </f:if>
+    </div>
+    <br>
+    <div class="details">
+        <f:security.ifAuthenticated>
+            <f:link.action action="assignMember" arguments="{course : course, gym: gym}">Sign Up</f:link.action>
+        </f:security.ifAuthenticated>
+        &nbsp
+        <f:link.action controller="GymManager" action="show" arguments="{course : course , gym : gym}">Course Overview
+        </f:link.action>
+    </div>
+    <br>
+    <div class="divTable">
+        <div class="divTableBody">
+            <div class="divTableRow">
+                <div class="divTableHead">Location</div>
+                <div class="divTableHead">Description</div>
+                <div class="divTableHead">Trainer</div>
+                <div class="divTableHead">Participants</div>
+                <div class="divTableHead">Start / Endtime</div>
+                <div class="divTableHead">Coursefee</div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">{course.street}<br/>{course.zipcode}&nbsp;{course.city}</div>
+                <div class="divTableCell">{course.description}</div>
+                <div class="divTableCell">{course.trainers.0.firstname}&nbsp;{course.trainers.0.lastname}</div>
+                <div class="divTableCell">
+                    <f:if condition="{course.users}">
+                        <f:then>
+                            <td>
+                                <f:for each="{course.users}" as="user">{user.username}</br></f:for>
+                        </f:then>
+                        </td>
+                        <f:else>
+                            <td>no bookings yet</td>
+                        </f:else>
+                    </f:if>
+                </div>
+                <div class="divTableCell">{course.coursestartAsString}<br/>{course.courseendAsString}</div>
+                <div class="divTableCell">
+                    <f:if condition="{course.price} == 0 || {isMember}">
+                        <f:then>
+                            <td align="center">FREE</td>
+                        </f:then>
+                        <f:else>
+                            <td align="center">{course.price}&nbsp;$</td>
+                        </f:else>
+                    </f:if>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:section>
+</html>

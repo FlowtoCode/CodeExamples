@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true" lang="">
+<f:layout name="Default"/>
+
+<f:section name="content">
+    <f:flashMessages/>
+    <f:render partial="GymDetails" arguments="{gym:gym}"></f:render>
+    <f:render partial="ActivityOverview" arguments="{gym:gym}"></f:render>
+    <f:render partial="Calendar" arguments="{calendar:calendar}"></f:render>
+    <br>
+    <input type="button" style="height:40px; width:80px;" name="back-button" value="Back"
+           onclick="self.location.href='index.php?id=17'">
+
+
+    <f:translate key="course.location.{course.location}" extensionName="gym_manager"/>
+
+</f:section>

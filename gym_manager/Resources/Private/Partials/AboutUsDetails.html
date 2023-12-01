@@ -1,0 +1,39 @@
+<div id="contactCard">
+    <div class="Pic" style="float: right; margin-right: 10px">
+        <f:if condition="{gym.staffPic}">
+            <f:then>
+                <div>
+                    <f:image height="200px" image="{gym.staffPic}"></f:image>
+                </div>
+            </f:then>
+            <f:else>
+                <f:if condition="{gym.ownerPic}">
+                    <f:then>
+                        <div>
+                            <f:image height="200px" image="{gym.ownerPic}"></f:image>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <div>
+                            <f:image height="200px" image="{gym.image}"></f:image>
+                        </div>
+                    </f:else>
+                </f:if>
+            </f:else>
+        </f:if>
+    </div>
+    <div class="info" style="clear: right">
+        <div><h6>Location:</h6></div>
+        <div>{gym.street}&nbsp;<br/>{gym.zipcode}&nbsp;<br/>{gym.city}</div>
+        <br>
+        <div><h6>Description:</h6></div>
+        <div>{gym.description}</div>
+        <br>
+        <div><h6>Contact:</h6></div>
+        <div>{gym.email}</div>
+    </div>
+
+</div>
+<br>
+<input type="button" style="height:40px; width:80px;" name="back-button" value="Back"
+       onclick="self.location.href='index.php?id=17'">

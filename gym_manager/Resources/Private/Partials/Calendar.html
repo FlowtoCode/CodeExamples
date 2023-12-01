@@ -1,0 +1,50 @@
+{namespace florian=Florian\GymManager\ViewHelpers}
+
+<f:if condition="{calendar} -> f:count()">
+    <div class="calendars">
+        <ul style="font-family:Monaco,Monaco,monospace;font-size: 200%;color: #1659df;">
+            {currentWeek}</ul>
+        <ul class="day day-list">
+            <li>Monday</li>
+            <li>Tuesday</li>
+            <li>Wednesday</li>
+            <li>Thursday</li>
+            <li>Friday</li>
+            <li>Saturday</li>
+            <li>Sunday</li>
+        </ul>
+        <ul class="day day-hours">
+            <f:for as="hour" each="{calendar}" key="hour_number">
+                <li>
+                    <florian:calendarTimeFormat hour="{hour_number}" />
+                </li>
+            </f:for>
+        </ul>
+        <ul class=" day day-activities">
+            <f:for as="hour" each="{calendar}" key="hour_number">
+                <ul class="day-activities-hour">
+                    <f:if condition="{hour} -> f:count()">
+                        <f:for as="day" each="{hour}" key="day_number">
+                            <li>
+                                <f:if condition="{day} -> f:count()">
+                                    <f:for each="{day}" as="course">
+                                        <span class="activity" data-start="{course.starthour}" data-end="{course.endhour}">
+                                            {course.name}
+                                        </span>
+                                    </f:for>
+                                </f:if>
+                            </li>
+                        </f:for>
+                    </f:if>
+                </ul>
+            </f:for>
+        </ul>
+    </div>
+    <f:asset.css identifier="Calendar" href="EXT:f7base/Resources/Public/Frontend/Css/calendar.css"/>
+    <f:asset.script
+        identifier="Calendar"
+        data="{cookieconsent:'ignore'}"
+        src="EXT:f7base/Resources/Public/Frontend/JavaScript/calendar.js"
+    />
+
+</f:if>

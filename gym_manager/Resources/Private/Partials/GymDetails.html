@@ -1,0 +1,48 @@
+{namespace florian=Florian\GymManager\ViewHelpers}
+
+<div id="container">
+    <f:if condition="{gym.image}">
+        <f:then>
+            <div id="framecontentLeft">
+                <f:image height="200px" image="{gym.image}"></f:image>
+            </div>
+        </f:then>
+    </f:if>
+    <div id="framecontentRight">
+        <div class="nav">
+            <h1>{gym.name}</h1>
+            <div class="divTableCell"><f:link.action action="show" arguments="{gym : gym}">Activities</f:link.action></div>
+            <div class="divTableCell"><f:link.action action="calendarShow" arguments="{gym : gym}">Calendar</f:link.action></div>
+            <div class="divTableCell"><f:link.action action="aboutUs" arguments="{gym : gym}">About Us</f:link.action></div>
+            <div class="divTableCell"><f:link.action action="trainers" arguments="{gym : gym}">Trainers</f:link.action></div>
+            <div class="divTableCell"><f:link.action action="media" arguments="{gym : gym}">Media</f:link.action></div>
+        </div>
+        <br>
+        <f:if condition="{filters}">
+            <div class="category-filter">
+                <f:form action="calendarShow" arguments="{gym:gym}">
+                    <f:for each="{filters}" as="filter" key="uid">
+                        <f:variable name="checked">0</f:variable>
+                        <f:for each="{selectedCategories}" as="selected">
+
+                            <f:if condition="{uid}=={selected}">
+                                <f:variable name="checked">1</f:variable>
+                            </f:if>
+                        </f:for>
+                        <f:if condition="{checked}==1">
+                            <f:then>
+                                <f:form.checkbox name="categories[]" value="{uid}" checked="checked"/>
+                                {filter}
+                            </f:then>
+                            <f:else>
+                                <f:form.checkbox name="categories[]" value="{uid}" />
+                                {filter}
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                    <f:form.submit value="Filter" />
+                </f:form>
+            </div>
+        </f:if>
+    </div>
+</div>

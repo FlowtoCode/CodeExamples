@@ -1,0 +1,70 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true" lang="">
+<f:layout name="Default"/>
+<f:section name="content">
+    <f:form.validationResults>
+        <f:if condition="{validationResults.flattenedErrors}">
+            <ul class="errors">
+                <f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
+                    <li>{propertyPath}
+                        <ul>
+                            <f:for each="{errors}" as="error">
+                                <li>{error.code}: {error}</li>
+                            </f:for>
+                        </ul>
+                    </li>
+                </f:for>
+            </ul>
+        </f:if>
+    </f:form.validationResults>
+    <h1>Starting points</h1>
+    <f:flashMessages as="flashMessages">
+        <dl class="messages">
+            <f:for each="{flashMessages}" as="flashMessage">
+                <dt>{flashMessage.code}</dt>
+                <dd>{flashMessage.message}</dd>
+            </f:for>
+        </dl>
+    </f:flashMessages>
+    <div>
+        <f:link.action action="new">Add your Location</f:link.action>
+    </div>
+    <br>
+    <div class="gymCard">
+        <div class="gymCardRow" style="height:25px">
+            <div class="gymCardHead" style="width:40px"></div>
+            <div class="gymCardHead" style="width:200px">Name</div>
+            <div class="gymCardHead" style="width:200px;padding-left:20px;">Location</div>
+            <div class="gymCardHead" style="width:350px">Categories</div>
+            <div class="gymCardHead" style="width:150px">Opening hours</div>
+        </div>
+        <f:for each="{gyms}" as="gym">
+            <div class="gymCardRow" id="row">
+                <div class="gymCardCell" id="plus" onclick= "document.getElementById('row').classList.toggle('expanded');" style="width: 40px">
+                    <f:image class="plus" src="EXT:f7base/Resources/Public/Frontend/Images/expand.png" width="40px" height="40px"></f:image>
+                    <f:image class="minus" src="EXT:f7base/Resources/Public/Backend/Images/minus.png" width="40px" height="40px"></f:image>
+                </div>
+                <div class="gymCardCell" style="width:200px">
+                    <f:link.action action="show" arguments="{gym : gym}">{gym.name}</f:link.action>
+                </div>
+                <div class="gymCardCell" style="width:200px;line-height: 1.0em;">
+                    <div class="gymCardCell">{gym.street}<br>{gym.city}&nbsp{gym.zipcode}</div>
+                </div>
+                <div class="gymCardCell" style="width:350px">
+                    (<f:count>{gym.availableCategories}</f:count>)
+                    <f:for each="{gym.availableCategories}" as="category">
+                        {category.name}&nbsp
+                    </f:for>
+                </div>
+                <div class="gymCardCell" style="width:150px">
+                    7 am - 9 pm
+                </div>
+                <f:security.ifAuthenticated>
+                    <div class="gymCardCell" style="width:15%;text-align: end">
+                        <f:link.action action="delete" arguments="{gym : gym}">Delete</f:link.action>
+                    </div>
+                </f:security.ifAuthenticated>
+            </div>
+        </f:for>
+    </div>
+</f:section>
+</html>
